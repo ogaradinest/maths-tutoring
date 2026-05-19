@@ -117,15 +117,6 @@ p  { line-height: 1.7; }
   border-color: rgba(255,255,255,.55);
 }
 
-.btn-whatsapp {
-  background: #25D366;
-  color: var(--white);
-  box-shadow: 0 4px 14px rgba(37,211,102,.3);
-}
-.btn-whatsapp:hover {
-  background: #1db954;
-  transform: translateY(-1px);
-}
 
 /* ============================================================
    NAV
@@ -590,8 +581,8 @@ p  { line-height: 1.7; }
   gap: 28px;
 }
 .about-avatar {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   background: linear-gradient(135deg, var(--navy-light), var(--blue));
   border-radius: 50%;
   display: flex;
@@ -599,6 +590,14 @@ p  { line-height: 1.7; }
   justify-content: center;
   border: 3px solid rgba(37,99,235,.4);
   box-shadow: 0 0 0 8px rgba(37,99,235,.08);
+  overflow: hidden;
+}
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 .avatar-initials {
   font-size: 2.5rem;
@@ -788,49 +787,41 @@ p  { line-height: 1.7; }
 .section-header--light h2  { color: var(--white); }
 .section-header--light .section-sub { color: rgba(255,255,255,.65); }
 
-.book-grid {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  justify-content: center;
-  margin-bottom: 48px;
-}
-.book-card {
-  flex: 1;
-  max-width: 380px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
+.calendar-wrap {
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+  margin-bottom: 40px;
+  background: var(--white);
 }
-.book-card--primary { border-color: rgba(37,99,235,.4); box-shadow: 0 0 40px rgba(37,99,235,.1); }
-.book-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(37,99,235,.15);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.book-icon svg    { width: 24px; height: 24px; color: var(--blue-light); }
-.book-icon--wa    { background: rgba(37,211,102,.12); }
-.book-icon--wa svg { color: #25D366; }
-.book-card h3 { color: var(--white); }
-.book-card p  { color: rgba(255,255,255,.65); font-size: 0.92rem; }
-.book-note    { font-size: 0.75rem; color: rgba(255,255,255,.3); }
+.calendar-wrap iframe { display: block; }
 
-.book-divider {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,.3);
-  font-weight: 600;
-  flex-shrink: 0;
+.book-contact {
+  text-align: center;
+  margin-bottom: 40px;
 }
+.book-contact-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 16px;
+}
+.book-contact-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,.8);
+  font-size: 0.97rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.contact-link svg { width: 16px; height: 16px; color: var(--blue-light); flex-shrink: 0; }
+.contact-link:hover { color: var(--white); }
 
 .reassurance-row {
   display: flex;
@@ -868,13 +859,12 @@ p  { line-height: 1.7; }
 .footer-col { display: flex; flex-direction: column; gap: 8px; }
 .footer-col h4 { color: var(--white); font-size: 0.87rem; font-weight: 600; margin-bottom: 4px; }
 .footer-col p  { font-size: 0.85rem; color: rgba(255,255,255,.45); }
-.footer-wa-link {
-  font-size: 0.87rem;
-  font-weight: 600;
-  color: #25D366;
-  transition: opacity var(--transition);
+.footer-contact-link {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,.5);
+  transition: color var(--transition);
 }
-.footer-wa-link:hover { opacity: .8; }
+.footer-contact-link:hover { color: rgba(255,255,255,.85); }
 .footer-bottom { padding: 20px 0; }
 .footer-bottom-inner {
   display: flex;
@@ -888,28 +878,6 @@ p  { line-height: 1.7; }
 .footer-legal a { font-size: 0.8rem; color: rgba(255,255,255,.35); transition: color var(--transition); }
 .footer-legal a:hover { color: rgba(255,255,255,.65); }
 
-/* ============================================================
-   STICKY WHATSAPP
-   ============================================================ */
-.sticky-wa {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 90;
-  background: #25D366;
-  color: var(--white);
-  display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 18px;
-  border-radius: 100px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  box-shadow: 0 4px 20px rgba(37,211,102,.4);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.sticky-wa svg { width: 20px; height: 20px; }
-.sticky-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.5); }
 
 /* ============================================================
    ANIMATIONS
@@ -1003,12 +971,8 @@ p  { line-height: 1.7; }
 
   .why-grid { grid-template-columns: 1fr; }
 
-  .book-grid { flex-direction: column; align-items: stretch; }
-  .book-divider { text-align: center; }
-  .book-card { max-width: 100%; }
+  .book-contact-row { flex-direction: column; align-items: center; }
 
   .footer-cols { flex-direction: column; gap: 28px; text-align: center; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
-
-  .sticky-wa { display: flex; }
 }
