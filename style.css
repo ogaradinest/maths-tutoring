@@ -348,21 +348,21 @@ p  { line-height: 1.7; }
 .card-label { font-size: 0.75rem; color: rgba(255,255,255,.4); font-weight: 500; white-space: nowrap; }
 .card-value { font-size: 0.82rem; color: rgba(255,255,255,.85); font-weight: 500; text-align: right; }
 .progress-row { align-items: center; }
-.progress-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.progress-row {
+  justify-content: flex-start !important;
+  gap: 10px !important;
 }
 .progress-track {
-  width: 110px;
+  flex: 1;
+  max-width: 120px;
   height: 6px;
   background: rgba(255,255,255,.1);
   border-radius: 3px;
-  flex-shrink: 0;
+  overflow: hidden;
 }
 .progress-fill {
   height: 100%;
-  width: 0;
+  width: 72%;
   background: linear-gradient(90deg, var(--blue), var(--green));
   border-radius: 3px;
   animation: grow 1.8s ease-out forwards;
@@ -373,6 +373,7 @@ p  { line-height: 1.7; }
   color: var(--green);
   font-weight: 600;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .pill-group { display: flex; gap: 6px; }
 .pill {
