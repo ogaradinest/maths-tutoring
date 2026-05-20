@@ -348,17 +348,18 @@ p  { line-height: 1.7; }
 .card-label { font-size: 0.75rem; color: rgba(255,255,255,.4); font-weight: 500; white-space: nowrap; }
 .card-value { font-size: 0.82rem; color: rgba(255,255,255,.85); font-weight: 500; text-align: right; }
 .progress-row { align-items: center; }
-.progress-row {
-  justify-content: flex-start !important;
-  gap: 10px !important;
+.progress-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .progress-track {
-  flex: 1;
-  max-width: 120px;
+  width: 100px;
   height: 6px;
   background: rgba(255,255,255,.1);
   border-radius: 3px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .progress-fill {
   height: 100%;
